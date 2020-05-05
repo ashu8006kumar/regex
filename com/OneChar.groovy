@@ -5,7 +5,7 @@ package com
  * 
  * 
  * 
- * String must contain atleast one number(digit) 0-9
+ * String must contain atleast one char(a-zA-z)
  * 
  * 
  * 
@@ -21,10 +21,10 @@ def inputList=[
 	"asdfghj1kl",
 	"1asdfghjkl",
 	"asdfghjkl",
-	//fail
-	"1234222"
+	"ABC777BN",
+	"1234222" //fail
 ]
 for (input in inputList) {
-	def matchers= (input =~ /(?=.*?\d).+/)
+	def matchers= (input =~ /(?i)(?=.*?[a-z]).+/)
 	println "${input} => ${matchers.size()?'valid':'invalid'}"
 }
